@@ -4,10 +4,9 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
-import Header from "./Header";
-import Landing from "./Landing";
-import Dashboard from "./Dashboard";
-import SurveyNew from "./surveys/SurveyNew";
+import Landing from "./Landing/Landing";
+import Routes from "./Teste";
+import Parallax from "./Parallax/ParallaxBackground";
 
 
 class App extends Component {
@@ -19,11 +18,10 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div className="container">
-            <Header />
+          <div className="dev-landing-page">
+            <Parallax/>
             <Route exact path="/" component={Landing} />
-            <Route exact path="/surveys" component={Dashboard} />
-            <Route exact path="/surveys/new" component={SurveyNew} />
+            <Route exact path="/routes" component={Routes} />
           </div>
         </BrowserRouter>
       </div>

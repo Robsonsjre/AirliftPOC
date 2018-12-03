@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Payments from './Payments'
 import * as actions from '../actions'
 
 class Header extends Component {
@@ -17,7 +16,6 @@ class Header extends Component {
         );
       default:
         return [
-          <li key="1"><Payments handleToken={this.props.handleToken}/></li>,
           <li key="2" style={{ margin: '0 10px'}}>Credits : {this.props.auth.credits}</li>,
           <li key="3"><a href="/api/logout">Logout</a></li>
         ]

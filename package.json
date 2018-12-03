@@ -35,7 +35,6 @@
     "path-route": "^1.0.4",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.3.1",
-    "react-stripe-checkout": "^2.6.3",
     "redux-thunk": "^2.3.0",
     "whatwg-fetch": "^3.0.0"
   }

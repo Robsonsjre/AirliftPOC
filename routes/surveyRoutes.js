@@ -2,9 +2,11 @@ const mongoose = require('mongoose')
 const requireLogin = require('../middlewares/requireLogin')
 const requireCredits = require('../middlewares/requireLogin')
 const Mailer = require('../services/Mailer')
+
 const Survey = mongoose.model('surveys');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplate')
 const treatRoute = require('../utils/surveys')
+
 module.exports = app => {
   app.get('/api/surveys', requireLogin, async (req, res) => {
     try {
