@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 
 import Landing from "./Landing/Landing";
-import Routes from "./Teste";
+import Routes from "./CreateUser/CreateUser";
 import Parallax from "./Parallax/ParallaxBackground";
 
 
@@ -21,7 +21,7 @@ class App extends Component {
           <div className="dev-landing-page">
             <Parallax/>
             <Route exact path="/" component={Landing} />
-            <Route exact path="/routes" component={Routes} />
+            <Route exact path="/urlhidden" component={Routes} />
           </div>
         </BrowserRouter>
       </div>
