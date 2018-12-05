@@ -31,8 +31,8 @@ class RouteCard extends React.Component {
   }
 
   componentDidMount() {
-    ReactModal.setAppElement('body');
- }
+    ReactModal.setAppElement("body");
+  }
 
   render() {
     console.log("RouteCard");
@@ -72,16 +72,20 @@ class RouteCard extends React.Component {
               shouldCloseOnOverlayClick={true}
             >
               <div className="modalContainer">
-              <img style={{width: "100%"}} src={this.props.route.pickupImgUrl}/>
-              <button
-                onClick={() => {
-                  this.setState({ isModalOpen: false });
-                }}
-                className="btn modal-trigger"
-              >
-                Close
-              </button>
-            </div>
+                <img
+                  className="imgModal"
+                  style={{ width: "100%" }}
+                  src={this.props.route.routeImgUrl}
+                />
+                <button
+                  onClick={() => {
+                    this.setState({ isModalOpen: false });
+                  }}
+                  className="btn modal-trigger"
+                >
+                  Close
+                </button>
+              </div>
             </ReactModal>
           </p>
         </div>
