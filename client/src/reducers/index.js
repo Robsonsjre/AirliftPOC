@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import { reducer as reduxForm } from 'redux-form';
 import authReducer from "./authReducer";
-import surveyReducer from "./surveyReducer";
+import routeReducer from "./routeReducer";
 
 //redux-form need to be assigned to the key 'form'
 export default combineReducers({
-  auth: authReducer,
+  user: authReducer,
   form: reduxForm,
-  surveys: surveyReducer
+  routes: routeReducer
 })

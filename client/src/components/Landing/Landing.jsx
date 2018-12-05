@@ -1,7 +1,35 @@
 import React from "react";
 import "./style.scss";
+import Welcome from "./Welcome";
+import RouteCard from "../RouteCard/RouteCard";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 class Landing extends React.Component {
+  constructor() {
+    super();
+    this.onClickButton = this.onClickButton.bind(this);
+    this.renderRoutes = this.renderRoutes.bind(this);
+  }
+
+  onClickButton(promotionCode) {
+    this.props.fetchRoutesFromUser(promotionCode);
+  }
+
+  renderRoutes(routes) {
+    return routes.map(route => {
+      return (
+        <div className="boxContainer">
+          <p> {route.title}</p>
+          <p> {route.departure}</p>
+          <p> {route.arrival}</p>
+          <p> {route.routeImgUrl}</p>
+          <p> {route.pickupImgUrl}</p>
+        </div>
+      );
+    });
+  }
+
   render() {
     return (
       <div
@@ -9,36 +37,29 @@ class Landing extends React.Component {
         className="landing-page"
       >
         <main style={{ color: "rgb(255, 255, 255)" }}>
-          <div className="intro-wrapper">
-            <div className="intro-name">Airlift INC.</div>
-            <div className="tagline">Insert your code below!</div>
-            <div
-              className="input-box"
-              style={{
-                maxWidth: "30%",
-                alignItems: "center",
-                paddingRight: "0.5em",
-                overflow: "hidden"
-              }}
-            >
-              <input
-                id="first_name"
-                type="text"
-                style={{ color: "white", width: "100%", textAlign: "center" }}
-              />
-              <button
-                className="btn waves-effect waves-light white"
-                type="submit"
-                style={{ float: "right", color: "black" }}
-              >
-                Submit
-              </button>
-            </div>
-          </div>
+          {this.props.routes.length ? (
+            <RouteCard routes={this.props.routes} />
+          ) : (
+            <Welcome
+              onClickButton={this.onClickButton}
+              showAlert={this.props.user.showAlert}
+            />
+          )}
         </main>
       </div>
     );
   }
 }
 
-export default Landing;
+function mapStateToProps(state) {
+  console.log("mapStateToProps", state);
+  return {
+    user: state.user,
+    routes: state.routes
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  actions
+)(Landing);

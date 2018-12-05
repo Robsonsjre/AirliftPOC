@@ -1,5 +1,6 @@
 export const FETCH_USER = 'fetch_user'
-export const HANDLE_PAYMENT = 'handle_payment'
+export const SHOW_SCREEN_ALERT = 'show_screen_alert'
 export const CHANGE_INPUT = 'change_input'
 export const CREATE_SURVEY = 'create_survey'
 export const FETCH_SURVEY = 'fetch_survey'
+export const SHOW_ROUTES_SCREEN = 'show_routes_screen'
