@@ -37,9 +37,8 @@ export const handleInput = (type, value) => {
   return { type: FETCH_USER, payload: { type, value } };
 };
 
-export const createSurvey = (values, history) => async dispatch => {
+export const createUser = (values, history) => async dispatch => {
   console.log('createSurvey action')
-  //send email
   const res = await axios.post("/api/surveys", values)
   console.log('res', res)
   history.push('/surveys')

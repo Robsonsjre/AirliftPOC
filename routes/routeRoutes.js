@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const async = require('async')
+
 const Routes = mongoose.model('routes');
 const Users = mongoose.model('users');
 
@@ -15,8 +16,6 @@ module.exports = app => {
 
   app.post("/api/routes", async (req, res) => {
     const { arrival, departure, name, routeImgUrl, pickupImgUrl } = req.body;
-    console.log("/api/routes")
-    console.log('req.body', req.body)
     const route = new Routes({
       arrival,
       departure,
@@ -34,9 +33,7 @@ module.exports = app => {
   });
 
   app.post("/api/routes/findUsersRoutes", async (req, res) => {
-    console.log("/api/routes/findUsersRoutes")
     const { promoCode } = req.body;
-    console.log('promoCode', promoCode)
 
     try {
       const user = await Users.findOne({promoId: promoCode})

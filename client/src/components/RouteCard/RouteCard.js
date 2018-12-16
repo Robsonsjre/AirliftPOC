@@ -55,8 +55,16 @@ class RouteCard extends React.Component {
             <p>{this.props.route.arrival}</p>
           </div>
           <div className="row">
+            <h2 style={{ float: "left" }}>Arrival Time:</h2>
+            <p>{this.props.route.arrival_time}</p>
+          </div>
+          <div className="row">
             <h2 style={{ float: "left" }}>Departure:</h2>
             <p>{this.props.route.departure}</p>
+          </div>
+          <div className="row">
+            <h2 style={{ float: "left" }}>Departure Time:</h2>
+            <p>{this.props.route.departure_time}</p>
           </div>
           <p className="read-more">
             <button
