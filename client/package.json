@@ -6,7 +6,7 @@
     "axios": "^0.18.0",
     "http-proxy-middleware": "^0.19.1",
     "materialize-css": "^1.0.0",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-modal": "^3.6.1",
